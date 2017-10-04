@@ -1,6 +1,6 @@
 package binaryTree;
 
-public class Node<T extends Comparable<T>>{
+public class Node<T extends Comparable<T>> implements Comparable<Node<T>>{
 
     private T data;
     private Node<T> left, right;
@@ -32,5 +32,10 @@ public class Node<T extends Comparable<T>>{
 
     public void setRight(Node<T> right) {
         this.right = right;
+    }
+
+    @Override
+    public int compareTo(Node<T> o) {
+        return this.data.compareTo(o.data);
     }
 }

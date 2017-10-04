@@ -58,6 +58,7 @@ public class LinkedList<T extends Comparable<T>> {
     }
 
     public Node<T> deleteFromFront() {
+        if(head == null) return null;
         Node<T> temp = head;
         head = head.getNext();
         return temp;

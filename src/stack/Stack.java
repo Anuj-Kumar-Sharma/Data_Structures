@@ -1,7 +1,6 @@
 package stack;
 
 import linkedList.LinkedList;
-import linkedList.Node;
 
 public class Stack<T extends Comparable<T>> {
 
@@ -15,12 +14,12 @@ public class Stack<T extends Comparable<T>> {
         linkedList.addToFront(data);
     }
 
-    public Node<T> peek() {
-        return linkedList.getHead();
+    public T peek() {
+        return linkedList.getHead().getData();
     }
 
-    public Node<T> pop() {
-        return linkedList.deleteFromFront();
+    public T pop() {
+        return linkedList.deleteFromFront().getData();
     }
 
     public boolean isEmpty(){

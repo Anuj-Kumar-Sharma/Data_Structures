@@ -1,27 +1,47 @@
 package binaryTree;
 
-import linkedList.Node;
-import queue.Queue;
-import stack.Stack;
-
 public class MainClass {
 
     public static void main(String[] args) {
 
-        Stack<Node<Integer>> q = new Stack<>();
-        /*q.push(null);
-        q.push(null);*/
-        q.push(new Node<>(45));
-        q.push(new Node<>(5));
-        q.push(new Node<>(15));
-        q.push(new Node<>(25));
+        BinaryTree<Integer> tree = new BinaryTree<>();
+        Integer[] a = {1, 2, 3, 4, 5, 6, -1, 11, -1, 8, -1, -1, 9, -1, -1};
 
-        System.out.println(q.peek().getData().getData());
+        /**
+         *                                      TREE
+         *                                       1
+         *                                     /   \
+         *                                    2     3
+         *                                   / \   /
+         *                                  4   5 6
+         *                                 /   /   \
+         *                                11  8     9
+         *
+         */
 
-        while (!q.isEmpty()) {
-            System.out.println(q.pop().getData().getData());
-        }
+
+        tree.constructTreeFromLevelOrderArray(a, 0);
 
 
+        /*
+        tree.printLevelOrder();
+        System.out.println();*/
+
+        tree.printLevelOrderNewLine();
+        System.out.println();
+//        tree.printLevelOrderZigzag();
+
+//        System.out.println();
+
+//        tree.printGivenLevel(tree.getRoot(), 4);
+//        System.out.println();
+//        tree.printVerticalOrder();
+        System.out.println();
+//        tree.printRightView();
+
+        System.out.println();
+//        tree.printTopView();
+
+        tree.printDiagonalView();
     }
 }
